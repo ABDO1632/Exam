@@ -1,7 +1,9 @@
 package com.example.exam;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -56,13 +58,25 @@ public class EditerPage extends AppCompatActivity {
         btnSupprimer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                long r=MyDatabase.DeleteEntreprise(db.getWritableDatabase(),en);
 
-                if(r!=-1){
-                    Toast.makeText(getApplicationContext(),"Delete Reussie"+en.getID(),Toast.LENGTH_LONG).show();
-                }else{
-                    Toast.makeText(getApplicationContext(),"Delete Echoue",Toast.LENGTH_LONG).show();
-                }
+                AlertDialog.Builder alert =new AlertDialog.Builder(EditerPage.this);
+                alert.setTitle("Boite 1");
+                alert.setMessage("Message avec un seul button ");
+                alert.setPositiveButton("ok", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        long r=MyDatabase.DeleteEntreprise(db.getWritableDatabase(),en.getID());
+
+                        if(r!=-1){
+                            Toast.makeText(getApplicationContext(),"Delete Reussie"+en.getID(),Toast.LENGTH_LONG).show();
+                        }else{
+                            Toast.makeText(getApplicationContext(),"Delete Echoue",Toast.LENGTH_LONG).show();
+                        }
+                    }
+                });
+                alert.show();
+
+
             }
         });
         sp.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
