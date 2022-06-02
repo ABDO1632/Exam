@@ -10,6 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Exam">
         <activity
+            android:name=".ListerPage"
+            android:exported="false" />
+        <activity
+            android:name=".EditerPage"
+            android:exported="false" />
+        <activity
+            android:name=".AjouterPage"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
