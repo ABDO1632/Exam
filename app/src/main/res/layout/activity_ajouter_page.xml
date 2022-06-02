@@ -3,10 +3,33 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:orientation="vertical"
     android:layout_height="match_parent"
     tools:context=".AjouterPage">
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Ajouter"/>
+    <EditText
+        style="@style/StyleEdit"
+        android:hint="Tapez votre raison social"
+        android:layout_marginBottom="20px"
+
+        android:id="@+id/ajoutRaisonS"/>
+    <EditText
+        style="@style/StyleEdit"
+        android:hint="Tapez votre adresse"
+        android:layout_marginBottom="20px"
+
+        android:id="@+id/editadresse"/>
+    <EditText
+        style="@style/StyleEdit"
+        android:hint="Tapez votre capital"
+        android:layout_marginBottom="20px"
+
+        android:id="@+id/editCapital"/>
+    <Button
+        style="@style/StyleButton"
+        android:layout_marginBottom="20px"
+        android:text="Enregistrez"/>
+    <Button
+        style="@style/StyleButton"
+        android:layout_marginBottom="20px"
+        android:text="Annuler"/>
 </LinearLayout>
