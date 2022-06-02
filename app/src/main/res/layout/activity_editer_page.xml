@@ -1,20 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:orientation="vertical"
     android:layout_height="match_parent"
     tools:context=".EditerPage">
-<TextView
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:text="editer"/>
     <Spinner
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/btn_Modifier"/>
+        android:id="@+id/editSpinner"/>
     <EditText
+        android:layout_below="@+id/editSpinner"
+
         style="@style/StyleEdit"
         android:hint="Tapez votre raison social"
         android:text=""
@@ -23,6 +21,7 @@
         android:id="@+id/editRaisonS"/>
     <EditText
         style="@style/StyleEdit"
+        android:layout_below="@+id/editRaisonS"
         android:hint="Tapez votre adresse"
         android:text=""
 
@@ -33,16 +32,25 @@
         style="@style/StyleEdit"
         android:hint="Tapez votre capital"
         android:text=""
-
+        android:layout_below="@+id/editadresse"
         android:layout_marginBottom="20px"
 
         android:id="@+id/editCapital"/>
     <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editCapital"
+
         style="@style/StyleButton"
-        android:layout_marginBottom="20px"
+        android:layout_marginLeft="100dp"
         android:id="@+id/editBtnM"
         android:text="@string/btn_Modifier"/>
     <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editCapital"
+        android:layout_toRightOf="@+id/editBtnM"
+
         style="@style/StyleButton"
         android:layout_marginBottom="20px"
         android:id="@+id/editBtnA"

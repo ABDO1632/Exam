@@ -34,6 +34,7 @@
         android:layout_marginBottom="20px"
         android:layout_below="@+id/ajoutCapital"
         android:id="@+id/ajoutBtnEnregistrez"
+        android:layout_marginLeft="100dp"
 
         android:text="@string/btn_Enregistrez"/>
 
@@ -43,8 +44,6 @@
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
         android:layout_below="@+id/ajoutCapital"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="53dp"
         android:layout_toRightOf="@+id/ajoutBtnEnregistrez"
         android:text="@string/btn_annuler" />
 </RelativeLayout>
