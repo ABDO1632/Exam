@@ -38,5 +38,15 @@ public class MyDatabase extends SQLiteOpenHelper {
         c.put(ColCapitale,ct.getCapitale());
         return sqLiteDatabase.insert(Nom_Table,null,c);
     }
+    //Update
+    public static long UpdateEntreprise(SQLiteDatabase sqLiteDatabase,Entreprise ct){
+        ContentValues c = new ContentValues();
+        c.put(ColRaisonSociale,ct.getRaisonSociale());
+        c.put(ColAdresse,ct.getAdresse());
+        c.put(ColCapitale,ct.getCapitale());
+        long result = sqLiteDatabase.update(MyDatabase.Nom_Table,c,"id = "+ct.getID(),null);
+        sqLiteDatabase.close();
+        return result;
+    }
     
 }
