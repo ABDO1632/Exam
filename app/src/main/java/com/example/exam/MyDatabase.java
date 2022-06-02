@@ -29,7 +29,7 @@ public class MyDatabase extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS  "+Nom_Table);
         onCreate(sqLiteDatabase);
     }
-
+   
     //Create
     public static long AddEntreprise(SQLiteDatabase sqLiteDatabase,Entreprise ct){
         ContentValues c=new ContentValues();
@@ -48,5 +48,10 @@ public class MyDatabase extends SQLiteOpenHelper {
         sqLiteDatabase.close();
         return result;
     }
-    
+    //Delete
+    public static long DeleteEntreprise(SQLiteDatabase sqLiteDatabase,int id){
+        long result = sqLiteDatabase.delete(Nom_Table,"id = "+id,null);
+        sqLiteDatabase.close();
+        return result;
+    }
 }
