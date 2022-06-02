@@ -8,21 +8,21 @@
     tools:context=".AjouterPage">
     <EditText
         style="@style/StyleEdit"
-        android:hint="Tapez votre raison social"
+        android:hint="@string/app_hintEditRS"
         android:layout_marginBottom="20px"
 
         android:id="@+id/ajoutRaisonS"/>
     <EditText
         style="@style/StyleEdit"
         android:layout_below="@+id/ajoutRaisonS"
-        android:hint="Tapez votre adresse"
+        android:hint="@string/app_hintEditAd"
         android:layout_marginBottom="20px"
 
         android:id="@+id/ajoutadresse"/>
     <EditText
         style="@style/StyleEdit"
         android:layout_below="@+id/ajoutadresse"
-        android:hint="Tapez votre capital"
+        android:hint="@string/app_hintEditC"
         android:layout_marginBottom="20px"
 
         android:id="@+id/ajoutCapital"/>

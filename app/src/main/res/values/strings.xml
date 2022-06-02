@@ -3,6 +3,9 @@
     <string name="app_ajout">Ajouter une entrepris</string>
     <string name="app_edite">Editer une entrepris</string>
     <string name="app_lister">Lister tous entrepris</string>
+    <string name="app_hintEditRS">Tapez votre raison social</string>
+    <string name="app_hintEditAd">Tapez votre adresse</string>
+    <string name="app_hintEditC">Tapez votre capital</string>
 
 
     <string name="btn_Enregistrez">Enregistrez</string>
