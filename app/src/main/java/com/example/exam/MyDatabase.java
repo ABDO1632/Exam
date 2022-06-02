@@ -70,6 +70,19 @@ public class MyDatabase extends SQLiteOpenHelper {
         return entr;
 
     }
-
+    //findById
+    public static Entreprise getOneEntreprise(SQLiteDatabase sqLiteDatabase, int id) {
+        Entreprise e = null;
+        Cursor cr = sqLiteDatabase.rawQuery("SELECT * FROM " + Nom_Table + " WHERE id=" + id, null);
+        while (cr.moveToNext())
+        {
+            e = new Entreprise();
+            e.setID(cr.getInt(0));
+            e.setRaisonSociale(cr.getString(1));
+            e.setAdresse(cr.getString(2));
+            e.setCapitale(cr.getDouble(3));
+        }
+        return e;
+    }
 
 }
