@@ -29,7 +29,7 @@ public class MyDatabase extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS  "+Nom_Table);
         onCreate(sqLiteDatabase);
     }
-   
+
     //Create
     public static long AddEntreprise(SQLiteDatabase sqLiteDatabase,Entreprise ct){
         ContentValues c=new ContentValues();
@@ -54,4 +54,22 @@ public class MyDatabase extends SQLiteOpenHelper {
         sqLiteDatabase.close();
         return result;
     }
+    //FindAll
+    public static ArrayList<Entreprise> getAllEntreprise(SQLiteDatabase sqLiteDatabase){
+        ArrayList<Entreprise> entr=new ArrayList<>();
+        Cursor cr=sqLiteDatabase.rawQuery("Select * from "+Nom_Table,null);
+        while (cr.moveToNext())
+        {
+            Entreprise e=new Entreprise();
+            e.setID(cr.getInt(0));
+            e.setRaisonSociale(cr.getString(1));
+            e.setRaisonSociale(cr.getString(2));
+            e.setCapitale(cr.getDouble(3));
+            entr.add(e);
+        }
+        return entr;
+
+    }
+    
+
 }
