@@ -16,11 +16,13 @@ public class MyDatabase extends SQLiteOpenHelper {
     }
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-
+        String query="create table "+Nom_Table+" ("+COLId+" INTEGER PRIMARY KEY AUTOINCREMENT, "+ ColRaisonSociale + " TEXT, " +ColAdresse + " TEXT, "+ColCapitale+ " DOUBLE )";
+        sqLiteDatabase.execSQL(query);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
-       
+        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS  "+Nom_Table);
+        onCreate(sqLiteDatabase);
     }
 }
