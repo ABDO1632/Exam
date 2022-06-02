@@ -10,6 +10,10 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:text="editer"/>
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_Modifier"/>
     <EditText
         style="@style/StyleEdit"
         android:hint="Tapez votre raison social"
@@ -36,10 +40,12 @@
     <Button
         style="@style/StyleButton"
         android:layout_marginBottom="20px"
-        android:text="Enregistrez"/>
+        android:id="@+id/editBtnM"
+        android:text="@string/btn_Modifier"/>
     <Button
         style="@style/StyleButton"
         android:layout_marginBottom="20px"
-        android:text="Annuler"/>
+        android:id="@+id/editBtnA"
+        android:text="@string/btn_annuler"/>
 
 </LinearLayout>

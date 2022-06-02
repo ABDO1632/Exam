@@ -7,8 +7,7 @@ public class Entreprise {
     public Entreprise() {
 
     }
-    public Entreprise(int ID, String raisonSociale, String adresse, double capitale) {
-        this.ID = ID;
+    public Entreprise( String raisonSociale, String adresse, double capitale) {
         RaisonSociale = raisonSociale;
         Adresse = adresse;
         Capitale = capitale;

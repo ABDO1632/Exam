@@ -4,4 +4,9 @@
     <string name="app_edite">Editer une entrepris</string>
     <string name="app_lister">Lister tous entrepris</string>
 
+
+    <string name="btn_Enregistrez">Enregistrez</string>
+    <string name="btn_Modifier">Modifier</string>
+
+    <string name="btn_annuler">Annuler</string>
 </resources>

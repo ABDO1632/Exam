@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:orientation="vertical"
     android:layout_height="match_parent"
     tools:context=".AjouterPage">
     <EditText
@@ -14,22 +14,37 @@
         android:id="@+id/ajoutRaisonS"/>
     <EditText
         style="@style/StyleEdit"
+        android:layout_below="@+id/ajoutRaisonS"
         android:hint="Tapez votre adresse"
         android:layout_marginBottom="20px"
 
-        android:id="@+id/editadresse"/>
+        android:id="@+id/ajoutadresse"/>
     <EditText
         style="@style/StyleEdit"
+        android:layout_below="@+id/ajoutadresse"
         android:hint="Tapez votre capital"
         android:layout_marginBottom="20px"
 
-        android:id="@+id/editCapital"/>
+        android:id="@+id/ajoutCapital"/>
     <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
         style="@style/StyleButton"
         android:layout_marginBottom="20px"
-        android:text="Enregistrez"/>
+        android:layout_below="@+id/ajoutCapital"
+        android:id="@+id/ajoutBtnEnregistrez"
+
+        android:text="@string/btn_Enregistrez"/>
+
     <Button
+        android:id="@+id/ajoutBtnAnnuler"
         style="@style/StyleButton"
-        android:layout_marginBottom="20px"
-        android:text="Annuler"/>
-</LinearLayout>
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_below="@+id/ajoutCapital"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="53dp"
+        android:layout_toRightOf="@+id/ajoutBtnEnregistrez"
+        android:text="@string/btn_annuler" />
+</RelativeLayout>
