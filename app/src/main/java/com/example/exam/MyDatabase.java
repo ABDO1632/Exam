@@ -1,8 +1,12 @@
 package com.example.exam;
 
+import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+
+import java.util.ArrayList;
 
 public class MyDatabase extends SQLiteOpenHelper {
     public  final  static String Nom_Db="enterprises.db";
@@ -25,4 +29,14 @@ public class MyDatabase extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS  "+Nom_Table);
         onCreate(sqLiteDatabase);
     }
+
+    //Create
+    public static long AddEntreprise(SQLiteDatabase sqLiteDatabase,Entreprise ct){
+        ContentValues c=new ContentValues();
+        c.put(ColRaisonSociale,ct.getRaisonSociale());
+        c.put(ColAdresse,ct.getAdresse());
+        c.put(ColCapitale,ct.getCapitale());
+        return sqLiteDatabase.insert(Nom_Table,null,c);
+    }
+    
 }
