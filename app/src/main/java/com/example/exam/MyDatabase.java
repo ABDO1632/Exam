@@ -70,6 +70,6 @@ public class MyDatabase extends SQLiteOpenHelper {
         return entr;
 
     }
-    
+
 
 }
