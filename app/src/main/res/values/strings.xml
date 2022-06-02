@@ -7,6 +7,7 @@
 
     <string name="btn_Enregistrez">Enregistrez</string>
     <string name="btn_Modifier">Modifier</string>
+    <string name="btn_Supprimer">Supprimer</string>
 
     <string name="btn_annuler">Annuler</string>
 </resources>

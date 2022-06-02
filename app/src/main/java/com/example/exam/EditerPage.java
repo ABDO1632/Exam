@@ -14,7 +14,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 public class EditerPage extends AppCompatActivity {
-    Button btnModifier,btnAnuler;
+    Button btnModifier,btnSupprimer;
     EditText txtRS,txtAdresse,txtCapital;
     MyDatabase db;
     Entreprise en;
@@ -27,8 +27,8 @@ public class EditerPage extends AppCompatActivity {
         setContentView(R.layout.activity_editer_page);
         db=new MyDatabase(this);
         sp=findViewById(R.id.editSpinner);
-        btnAnuler=findViewById(R.id.editBtnA);
-        btnAnuler=findViewById(R.id.editBtnM);
+        btnSupprimer=findViewById(R.id.editBtnA);
+        btnModifier=findViewById(R.id.editBtnM);
         txtRS=findViewById(R.id.editRaisonS);
         txtAdresse=findViewById(R.id.editadresse);
         txtCapital=findViewById(R.id.editCapital);
@@ -53,10 +53,16 @@ public class EditerPage extends AppCompatActivity {
                 }
             }
         });
-        btnAnuler.setOnClickListener(new View.OnClickListener() {
+        btnSupprimer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                finish();
+                long r=MyDatabase.DeleteEntreprise(db.getWritableDatabase(),en);
+
+                if(r!=-1){
+                    Toast.makeText(getApplicationContext(),"Delete Reussie"+en.getID(),Toast.LENGTH_LONG).show();
+                }else{
+                    Toast.makeText(getApplicationContext(),"Delete Echoue",Toast.LENGTH_LONG).show();
+                }
             }
         });
         sp.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {

@@ -54,6 +54,6 @@
         style="@style/StyleButton"
         android:layout_marginBottom="20px"
         android:id="@+id/editBtnA"
-        android:text="@string/btn_annuler"/>
+        android:text="@string/btn_Supprimer"/>
 
-</LinearLayout>
+</RelativeLayout>
